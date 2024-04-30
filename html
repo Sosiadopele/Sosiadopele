@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aceitar ou Recusar</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+    }
+    button {
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        margin: 10px;
+    }
+    #sim {
+        background-color: green;
+        color: white;
+        border: none;
+    }
+    #nao {
+        background-color: red;
+        color: white;
+        border: none;
+        position: absolute;
+    }
+</style>
+</head>
+<body>
+    <h1> Aceita continuar namorando comigo?</h1>
+    <button id="sim" onclick="aceitar()">Sim</button>
+    <button id="nao" onclick="moverNao()">Não</button>
+
+    <script>
+        function aceitar() {
+            alert("Eu sabia! Eu te amo Ni❤️");
+            // Aqui você pode redirecionar para outra página ou fazer qualquer outra ação desejada após aceitar
+        }
+
+        function moverNao() {
+            var naoButton = document.getElementById("nao");
+            var bodyWidth = document.body.clientWidth;
+            var bodyHeight = document.body.clientHeight;
+            var newX = Math.floor(Math.random() * (bodyWidth - naoButton.offsetWidth));
+            var newY = Math.floor(Math.random() * (bodyHeight - naoButton.offsetHeight));
+            naoButton.style.left = newX + "px";
+            naoButton.style.top = newY + "px";
+        }
+    </script>
+</body>
+</html>
